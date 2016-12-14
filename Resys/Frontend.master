@@ -1,0 +1,201 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Frontend.master.cs" Inherits="Frontend" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>锐赛思</title>
+    <link href="css2/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js2/jquery.min.js"></script>
+    <!-- Custom Theme files 自定义主题文件 -->
+    <link href="css2/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- 设置网络关键字 -->
+    <%--<meta name="keywords" content="Express News Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />--%>
+    <!-- 页面加载的时候添加一个定时器，0秒之后执行hideURLbar函数。hideURLbar函数将页面滚动至坐标（0,1） -->
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- for bootstrap working -->
+    <script type="text/javascript" src="js2/bootstrap.js"></script>
+    <!-- //for bootstrap working -->
+    <script src="js2/responsiveslides.min.js"></script>
+    <script>
+        $(function () {
+            $("#slider").responsiveSlides({
+                auto: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+                pager: true,
+            });
+        });
+	    </script>
+    <script type="text/javascript" src="js2/move-top.js"></script>
+    <script type="text/javascript" src="js2/easing.js"></script>
+    <!--/script-->
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 900);
+            });
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- header-section-starts-here -->
+        <div class="header">
+            <div class="header-bottom">
+                <div class="login">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#">
+                            <asp:Image ID="loginlogo" runat="server" ImageUrl="~/images/loginlogo2.png" width="23px"/>
+                            登录
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            <asp:Image ID="accountlogo" runat="server" ImageUrl="~/images/accountlogo.png" width="18px"/>
+                            注册
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navigation">
+                    <nav class="navbar navbar-default" role="navigation">
+                        <div class="wrap">
+                            <!-- 屏幕缩小后导航栏的图标样式 -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse ">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <a class="navbar-brand" href="#"><img src="/images/RESYS.png" /></a>
+                            <!--/.navbar-header-->
+                            <div class="collapse navbar-collapse navbar-responsive-collapse ">               
+                                <ul class="nav navbar-nav navbar-left">
+                                        <li class="nav-item1"><a href="Index.aspx">首页</a></li>
+                                        <li class="nav-item1"><a href="Article_List.aspx">资讯</a></li>
+                                        <li class="nav-item2"><a href="OpenSourceProject.aspx">微软开源</a></li>
+                                        <li class="nav-item2"><a href="#">OpenStack</a></li>
+                                        <li class="nav-item2"><a href="#">产品介绍</a></li>
+                                        <li class="nav-item2"><a href="Login.aspx">相关下载</a></li>
+                                        <div class="clearfix"></div>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="search">
+                                <!-- start search-->
+                                <form class="navbar-form navbar-right" role="search">
+                                    <div class="form-group"><input type="text" class="form-control" placeholder="搜索你要的咚咚" /></div>
+                                    <button type="submit" class="btn btn-default">Search</button>
+                                </form>                           
+                            </div>
+                        </div>
+                        <!--/.navbar-collapse-->
+                    </nav>
+                    <!--/.navbar-->
+                </div>
+
+            </div>
+        </div>
+        <!-- header-section-ends-here -->
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <!-- footer-section-starts-here -->
+        <div class="footer">
+            <div class="footer-top">
+                <div class="wrap">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  footer-grid">
+                        <h4 class="footer-head">关于我们</h4>
+                        <p>我们是一个无比高颜值的团队</p>
+                        <p>我们是一个无比牛逼的团队</p>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12  footer-grid">
+                        <h4 class="footer-head">目录</h4>
+                        <ul class="cat">
+                            <li><a href="Index.aspx">首页</a></li>
+                            <li><a href="Article_List.aspx">资讯</a></li>
+                            <li><a href="#">微软开源</a></li>
+                            <li><a href="OpenStack.aspx">OpenStack</a></li>
+                            <li><a href="#">产品介绍</a></li>
+                            <li><a href="#">相关下载</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12   footer-grid">
+                        <h4 class="footer-head">联系我们</h4>
+                        <address>
+                            <ul class="location">
+                                <li><span class="glyphicon glyphicon-map-marker"></span></li>
+                                <li>广东技术师范学院白云校区</li>
+                                <div class="clearfix"></div>
+                            </ul>
+                            <ul class="location">
+                                <li><span class="glyphicon glyphicon-earphone"></span></li>
+                                <li>601202802</li>
+                                <div class="clearfix"></div>
+                            </ul>
+                            <ul class="location">
+                                <li><span class="glyphicon glyphicon-envelope"></span></li>
+                                <li><a href="#">601202802@qq.com</a></li>
+                                <div class="clearfix"></div>
+                            </ul>
+                        </address>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  footer-grid">
+                        <h4 class="footer-head">寻求合作</h4>
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/images/SCAN.png" width="120px"/>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            </div>
+            <div class="footer-bottom">
+                    <div class="Copyright">
+                        Copyright &copy; 2016-2017锐赛思.All rights reserved.
+                    </div>
+                    <!--
+                    <div class="footer-social-icons col-md-6">
+                        <ul>
+                            <li><a class="facebook" href="#"></a></li>
+                            <li><a class="twitter" href="#"></a></li>
+                            <li><a class="flickr" href="#"></a></li>
+                            <li><a class="googleplus" href="#"></a></li>
+                            <li><a class="dribbble" href="#"></a></li>
+                        </ul>
+                    </div> -->
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        <!-- footer-section-ends-here -->
+        <script type="text/javascript">
+            $(document).ready(function () {
+                /*
+				var defaults = {
+				wrapID: 'toTop', // fading element id
+				wrapHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+				*/
+                $().UItoTop({ easingType: 'easeOutQuart' });
+            });
+        </script>
+        <a href="#to-top" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+        <!---->
+
+    </form>
+</body>
+</html>
